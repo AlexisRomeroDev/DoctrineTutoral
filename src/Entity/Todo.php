@@ -27,6 +27,11 @@ class Todo
      */
     private $description;
 
+    /**
+     * @ORM\ManyToOne(targetEntity=Priority::class)
+     */
+    private $priority;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -52,6 +57,18 @@ class Todo
     public function setDescription(?string $description): self
     {
         $this->description = $description;
+
+        return $this;
+    }
+
+    public function getPriority(): ?Priority
+    {
+        return $this->priority;
+    }
+
+    public function setPriority(?Priority $priority): self
+    {
+        $this->priority = $priority;
 
         return $this;
     }
