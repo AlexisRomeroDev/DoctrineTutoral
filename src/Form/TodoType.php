@@ -13,6 +13,7 @@ class TodoType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('description')
         ;
     }
 

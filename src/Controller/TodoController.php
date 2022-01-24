@@ -18,6 +18,8 @@ class TodoController extends AbstractController
 {
     /**
      * @Route("/", name="todo_index", methods={"GET"})
+     * @param TodoRepository $todoRepository
+     * @return Response
      */
     public function index(TodoRepository $todoRepository): Response
     {
