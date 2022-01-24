@@ -19,10 +19,15 @@ class AppFixtures extends Fixture
         $this->manager = $manager;
         $this->faker = Factory::create('fr_FR');
 
-        $todo = new Todo();
-        $todo->setName($this->faker->sentence(6,true));
-        $todo->setDescription($this->faker->sentence(18,true));
-        $manager->persist($todo);
+        for($i=0; $i<10; $i++){
+
+            $todo = new Todo();
+            $todo->setName($this->faker->sentence(5,true));
+            $todo->setDescription($this->faker->sentence(18,true));
+            $manager->persist($todo);
+
+        }
+
         $manager->flush();
     }
 }
